@@ -6,7 +6,7 @@ const showcaseItems = [
     title: "Image Optimization Tool",
     description: "Compress and resize images automatically to optimize web performance without losing quality.",
     calls: "1,256 Calls",
-    image: "/api/placeholder/300/200", // You'll need to add actual images
+    image: "/showcase1.svg", // You'll need to add actual images
     category: "Articles for you"
   },
   {
@@ -14,7 +14,7 @@ const showcaseItems = [
     title: "AI Chatbot Builder",
     description: "Build and customize AI-powered chatbots to handle customer queries in real time.",
     calls: "1,256 Calls",
-    image: "/api/placeholder/300/200",
+    image: "/showcase2.svg",
     category: "The Future of Artificial Intelligence in Cybersecurity"
   },
   {
@@ -22,7 +22,7 @@ const showcaseItems = [
     title: "Data Visualization Dashboard",
     description: "Transform raw data into interactive charts and graphs for better decision making.",
     calls: "1,256 Calls",
-    image: "/api/placeholder/300/200",
+    image: "/showcase3.svg",
     category: "Thursday, Feb 17"
   },
   {
@@ -30,7 +30,7 @@ const showcaseItems = [
     title: "PDF Report Generator",
     description: "Convert structured data into well-formatted PDF reports instantly.",
     calls: "1,256 Calls",
-    image: "/api/placeholder/300/200",
+    image: "/showcase4.svg",
     category: "Simplify your security with our services"
   },
   {
@@ -38,7 +38,7 @@ const showcaseItems = [
     title: "SEO Keyword Analyzer",
     description: "Analyze your website's keywords and get optimization suggestions to boost search rankings.",
     calls: "1,256 Calls",
-    image: "/api/placeholder/300/200",
+    image: "/showcase5.svg",
     category: "We are always ready to help you and answer your questions"
   },
   {
@@ -46,7 +46,7 @@ const showcaseItems = [
     title: "Social Media Scheduler",
     description: "Plan, schedule, and publish posts across multiple platforms with one click.",
     calls: "1,256 Calls",
-    image: "/api/placeholder/300/200",
+    image: "/showcase6.svg",
     category: "The only way to get your content out"
   }
 ];
@@ -129,35 +129,31 @@ const ShowcasePage = () => {
             {/* Showcase Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[25px]">
             {showcaseItems.map((item) => (
-                <div key={item.id} className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
-                <div className="relative h-48 bg-gradient-to-br from-blue-500 to-purple-600">
-                    {/* Mock content based on the item */}
-                    <div className="absolute inset-0 p-4 text-white">
-                    <div className="text-sm font-medium">{item.category}</div>
-                    {item.id === 1 && (
-                        <div className="mt-4">
-                        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center text-blue-500 text-xl">▶</div>
-                        </div>
-                    )}
-                    {item.id === 2 && (
-                        <div className="mt-4 text-xs">
-                        <div>Thursday, Feb 17</div>
-                        <div>2:30 pm</div>
-                        <div>Webinar</div>
-                        </div>
-                    )}
-                    {item.id === 3 && (
-                        <div className="mt-4">
-                        <div className="w-full h-20 bg-black/20 rounded"></div>
-                        </div>
-                    )}
+                <div key={item.id} className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
+                    <div className="relative h-48 bg-gradient-to-br from-blue-500 to-purple-600 rounded-b-lg">
+                        <Image
+                            src={item.image}
+                            alt={item.title}
+                            width={300}
+                            height={200}
+                            className="w-full h-full object-cover"
+                        />
                     </div>
-                </div>
-                <div className="p-4">
-                    <h3 className="font-semibold text-gray-900 mb-2">{item.title}</h3>
-                    <p className="text-sm text-gray-600 mb-3 leading-relaxed">{item.description}</p>
-                    <div className="text-xs text-gray-500">{item.calls}</div>
-                </div>
+                    <div className="py-6 px-4 flex flex-col gap-2">
+                        <div className="flex justify-between items-center gap-2">
+                            <h3 className="font-semibold text-black text-[16px]">{item.title}</h3>
+                            <div className="flex items-center gap-1 text-[11px] text-gray-500 bg-gray-100 w-fit rounded-3xl pl-[6px] pr-3 py-1">
+                                <Image
+                                    src={"/callstool.svg"}
+                                    alt="totalcalls"
+                                    width={14}
+                                    height={14}
+                                />
+                                {item.calls}
+                            </div>
+                        </div>
+                        <p className="text-sm text-gray-700 leading-relaxed">{item.description}</p>
+                    </div>
                 </div>
             ))}
             </div>

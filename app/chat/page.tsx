@@ -71,7 +71,7 @@ const ChatPage = () => {
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
                 placeholder="Reply"
-                className="w-full h-10 px-3 pr-10 rounded-md focus:border-orange-500 focus:ring-orange-500 text-sm"
+                className="w-full h-10 px-3 pr-10 rounded-md focus:ring-0 focus-visible:border-none focus-visible:ring-0 text-sm"
               />
             </div>
             <div className="flex items-center justify-between gap-2 w-full">

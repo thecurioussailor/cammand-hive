@@ -6,6 +6,7 @@ const navItems = [
     { href: "/chat", label: "Chat" },
     { href: "/myservers", label: "My Servers" },
     { href: "/leaderboard", label: "Leaderboard" },
+    { href: "/showcase", label: "Showcase" },
   ];
 const Navbar = () => {
   return (
