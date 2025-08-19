@@ -21,8 +21,8 @@ const HomePage = () => {
   const [isTyping, setIsTyping] = useState(true)
   const [isFocused, setIsFocused] = useState(false)
   const [hasUserInput, setHasUserInput] = useState(false)
-  const typewriterRef = useRef(null)
-  const textareaRef = useRef(null)
+  const typewriterRef = useRef<NodeJS.Timeout | null>(null)
+  const textareaRef = useRef<HTMLTextAreaElement>(null)
   const [inputValue, setInputValue] = useState("")
 
   const startTypewriter = useCallback(() => {
@@ -76,7 +76,7 @@ const HomePage = () => {
     }
   }, [startTypewriter])
 
-  const handleInputChange = useCallback((e) => {
+  const handleInputChange = useCallback((e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const value = e.target.value
     setInputValue(value)
     setHasUserInput(value.length > 0)
