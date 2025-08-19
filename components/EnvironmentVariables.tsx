@@ -55,7 +55,7 @@ const EnvironmentVariables = () => {
             <DialogContent className="[&>button]:hidden">
               <DialogHeader className="gap-4">
                 <DialogTitle className="text-[20px] font-semibold text-gray-800 flex items-center justify-between">Environment Variables – Usage Guide
-                  <DialogClose className="rounded-sm text-gray-600 opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
+                  <DialogClose className="rounded-sm text-gray-600 opacity-70 transition-opacity hover:opacity-100 focus:outline-none">
                     <X className="h-5 w-5" />
                     <span className="sr-only">Close</span>
                   </DialogClose>
