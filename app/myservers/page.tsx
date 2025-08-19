@@ -92,7 +92,6 @@ const MyServersPage = () => {
                         width={24}
                         height={24}
                     />
-                   
                     <div className="text-[18px] font-semibold text-gray-800">
                         {srv.invocations}
                     </div>

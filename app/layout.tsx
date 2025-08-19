@@ -29,14 +29,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="absolute top-0 left-0 w-full h-[1024px] -z-10">
-          <Image
-            src="/background.svg"
-            alt="Background"
-            className="w-full h-full object-cover"
-            fill
-          />
-        </div>
+        <div 
+          className="fixed inset-0 -z-10"
+          style={{
+            backgroundImage: 'url(/background.svg)',
+            backgroundRepeat: 'repeat',
+            backgroundSize: 'contain'
+          }}
+        />
         <Navbar />
         {children}
       </body>
