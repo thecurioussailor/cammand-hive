@@ -1,5 +1,7 @@
+"use client"
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const navItems = [
     { href: "/", label: "New Project" },
@@ -9,6 +11,7 @@ const navItems = [
     { href: "/showcase", label: "Showcase" },
   ];
 const Navbar = () => {
+    const pathname = usePathname()
   return (
     <nav className="fixed flex justify-between items-center top-0 left-0 right-0 z-50 px-8 h-[72px] bg-white">
         <div className="flex">
@@ -20,7 +23,10 @@ const Navbar = () => {
         <div className="flex items-center gap-8">
             <div className="flex items-center gap-4">
                 {navItems.map((item) => (
-                    <Link href={item.href} key={item.href} className="text-[16px] rounded-lg px-4 py-2 font-semibold text-[#1D2939]">
+                    <Link 
+                        href={item.href} 
+                        key={item.href} 
+                        className={`text-[16px] rounded-lg px-4 py-2 transition-all duration-300 ease-in-out font-semibold text-gray-500 ${pathname === item.href ? "bg-slate-100 text-gray-800" : ""}`}>
                         {item.label}
                     </Link>
                 ))}
