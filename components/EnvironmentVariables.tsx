@@ -1,6 +1,15 @@
 "use client";
 import { useState } from "react";
-
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import { Info, X } from 'lucide-react';
 interface EnvVariable {
   id: number;
   name: string;
@@ -39,13 +48,29 @@ const EnvironmentVariables = () => {
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-2">
           <h2 className="text-lg font-semibold text-gray-900">Environmental Variables</h2>
-          <button className="p-1 text-gray-400 hover:text-gray-600">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
-              <line x1="12" y1="17" x2="12.01" y2="17"/>
-            </svg>
-          </button>
+          <Dialog>
+            <DialogTrigger>
+                <Info className="w-4 h-4 mt-1" />
+            </DialogTrigger>
+            <DialogContent className="[&>button]:hidden">
+              <DialogHeader className="gap-4">
+                <DialogTitle className="text-[20px] font-semibold text-gray-800 flex items-center justify-between">Environment Variables – Usage Guide
+                  <DialogClose className="rounded-sm text-gray-600 opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
+                    <X className="h-5 w-5" />
+                    <span className="sr-only">Close</span>
+                  </DialogClose>
+                </DialogTitle>
+                <DialogDescription>
+                  <ul className="list-disc list-outside pl-5">
+                    <li className="text-gray-800 text-[16px]">Define the environment variables your application requires to run.</li>
+                    <li className="text-gray-800 text-[16px]">Use clear and meaningful names such as API_KEY, DATABASE_URL, AUTH_TOKEN, etc.</li>
+                    <li className="text-gray-800 text-[16px]">All values will be securely encrypted and made accessible to your application during runtime.</li> 
+                    <li className="text-gray-800 text-[16px]">Click “Save All” to apply and store your changes.</li>
+                  </ul>
+                </DialogDescription>
+              </DialogHeader>
+            </DialogContent>
+          </Dialog>
         </div>
         <div className="flex items-center gap-2">
           <button
