@@ -97,7 +97,7 @@ const ChatPage = () => {
       </div>
 
       {/* Right Panel with Tabs */}
-      <div className="w-[calc(100%-491px)] flex flex-col bg-[#EAECF04D] pr-[16px] ml-[491px]">
+      <div className="w-[calc(100%-491px)] overflow-x-hidden flex flex-col bg-[#EAECF04D] pr-[16px] ml-[491px]">
         {/* Tab Header */}
         <div className="border-b border-gray-200">
           <div className="flex items-center">
