@@ -8,26 +8,6 @@ const servers = new Array(6).fill({
   invocations: "1,256",
 });
 
-const StatSparkline = () => (
-  <div className="h-[44px] w-full rounded-md border border-gray-200 bg-white px-2 py-1">
-    <svg viewBox="0 0 100 40" className="h-full w-full">
-      <polyline
-        fill="none"
-        stroke="#FDB022"
-        strokeWidth="2"
-        points="0,30 15,26 25,28 35,18 45,22 55,16 65,26 75,20 85,23 100,22"
-      />
-      <polyline
-        fill="none"
-        stroke="#3F3F46"
-        strokeOpacity="0.6"
-        strokeWidth="2"
-        points="0,32 15,31 25,29 35,24 45,28 55,26 65,28 75,24 85,26 100,26"
-      />
-    </svg>
-  </div>
-);
-
 const MyServersPage = () => {
   return (
     <section className="pt-[122px] flex flex-col gap-10 items-center">

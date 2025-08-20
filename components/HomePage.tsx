@@ -91,10 +91,10 @@ const HomePage = () => {
   }, [])
 
   return (
-    <main className="w-[1217px] flex flex-col mx-auto gap-14">
+    <main className="w-[1217px] flex flex-col mx-auto gap-14 mb-10">
       {/* Hero Section */}
       <div className="flex flex-col items-center gap-[60px] pt-[192px] max-w-[1010px] mx-auto">
-        <div className="text-center w-full">
+        <div className="text-center w-[596px]">
           <h1 className="text-[40px] font-semibold text-[#14110E] mb-6">
             Build MCP Server In Minutes
             <span className="text-orange-500">.</span>
@@ -106,7 +106,7 @@ const HomePage = () => {
         </div>
 
         {/* Main input box with integrated controls */}
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 max-w-[802px] w-full overflow-hidden relative">
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 min-w-[802px] w-full overflow-hidden relative">
           {/* Textarea with typewriting effect */}
           <div className="relative">
             <Textarea
