@@ -5,6 +5,7 @@ import GeneratedCode from "@/components/GeneratedCode";
 import ToolsCall from "@/components/ToolsCall";
 import EnvironmentVariables from "@/components/EnvironmentVariables";
 import Terminal from "@/components/Terminal";
+import MCPProxyServer from "@/components/MCPProxyServer";
 
 const ChatPage = () => {
   const [activeTab, setActiveTab] = useState("Generated Code");
@@ -20,7 +21,7 @@ const ChatPage = () => {
   ]);
   const [inputValue, setInputValue] = useState("");
 
-  const tabs = ["Generated Code", "Tool Calls", "Environmental Variables", "Terminal"];
+  const tabs = ["Generated Code", "Tool Calls", "Environmental Variables", "Terminal", "MCP Proxy Servers"];
 
   const handleSendMessage = () => {
     if (inputValue.trim()) {
@@ -144,6 +145,11 @@ const ChatPage = () => {
             {activeTab === "Terminal" && (
               <div className="text-gray-500">
                 <Terminal />
+              </div>
+            )}
+            {activeTab === "MCP Proxy Servers" && (
+              <div className="text-gray-500">
+                <MCPProxyServer />
               </div>
             )}
           </div>

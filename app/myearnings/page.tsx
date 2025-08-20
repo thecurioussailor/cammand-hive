@@ -110,83 +110,46 @@ const MyEarningsPage = () => {
               </div>
             </div>
           </div>
-
           {/* Total Tool Calls */}
           <div className="flex flex-col gap-6 w-[287px]">
             <div className="bg-white flex rounded-[12px] p-4 border border-gray-100">
                 <div className="flex gap-4">
-                <div className="w-[48px] h-[48px] bg-[#EAECF5] rounded-lg flex items-center justify-center">
-                    <Image
-                    src="/totalcalls.svg"
-                    alt="total calls"
-                    width={24}
-                    height={24}
-                    />
-                </div>
-                <div className="flex flex-col gap-1">
-                    <span className="text-[14px] font-medium text-gray-500">Total Tool Calls</span>
-                    <div className="text-[24px] font-bold text-black">15,420</div>
-                </div>
+                    <div className="w-[48px] h-[48px] bg-[#EAECF5] rounded-lg flex items-center justify-center">
+                        <Image
+                        src="/totalcalls.svg"
+                        alt="total calls"
+                        width={24}
+                        height={24}
+                        />
+                    </div>
+                    <div className="flex flex-col gap-1">
+                        <span className="text-[14px] font-medium text-gray-500">Total Tool Calls</span>
+                        <div className="text-[24px] font-bold text-black">15,420</div>
+                    </div>
                 </div>
             </div>
-            {/* Paid Tool Calls */}
-            <div className="bg-white rounded-[12px] p-4 border border-gray-100">
-                <div className="flex flex-col gap-4">
-                <div className="w-[48px] h-[48px] bg-[#EAECF5] rounded-lg flex items-center justify-center">
-                    <Image
-                    src="/totalcalls.svg"
-                    alt="paid calls"
-                    width={24}
-                    height={24}
-                    />
-                </div>
-                <div className="flex flex-col gap-1">
-                    <span className="text-[14px] font-medium text-gray-500">Paid Tool Calls</span>
-                    <div className="text-[24px] font-bold text-black">2,542</div>
-                </div>
+            <div className="bg-white flex rounded-[12px] p-4 border border-gray-100">
+                <div className="flex gap-4">
+                    <div className="w-[48px] h-[48px] bg-[#EAECF5] rounded-lg flex items-center justify-center">
+                        <Image
+                        src="/totalcalls.svg"
+                        alt="total calls"
+                        width={24}
+                        height={24}
+                        />
+                    </div>
+                    <div className="flex flex-col gap-1">
+                        <span className="text-[14px] font-medium text-gray-500">Total Tool Calls</span>
+                        <div className="text-[24px] font-bold text-black">15,420</div>
+                    </div>
                 </div>
             </div>
           </div>
-        </div>
-
-        {/* Second Row - Earnings Breakdown */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+          <div className="w-[492px] gap-6">
           {/* Earnings Breakdown Card */}
-          <div className="lg:col-span-1 bg-white rounded-[12px] p-6 border border-gray-100">
+          <div className="flex bg-white rounded-[12px] p-6 border border-gray-100">
             <div className="flex flex-col gap-4">
               <h3 className="text-[18px] font-semibold text-gray-900">Earnings Breakdown</h3>
-              
-              {/* Donut Chart */}
-              <div className="relative w-32 h-32 mx-auto">
-                <svg className="w-32 h-32 transform -rotate-90" viewBox="0 0 36 36">
-                  <path
-                    className="text-gray-200"
-                    stroke="currentColor"
-                    strokeWidth="3"
-                    fill="transparent"
-                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                  />
-                  <path
-                    className="text-orange-500"
-                    stroke="currentColor"
-                    strokeWidth="3"
-                    strokeDasharray="75, 100"
-                    strokeLinecap="round"
-                    fill="transparent"
-                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                  />
-                </svg>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-[20px] font-bold text-gray-900">5</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="text-center">
-                <div className="text-[14px] font-medium text-gray-600">Active Servers</div>
-              </div>
-
               {/* Legend */}
               <div className="space-y-2 text-sm">
                 <div className="flex items-center gap-2">
@@ -211,13 +174,40 @@ const MyEarningsPage = () => {
                 </div>
               </div>
             </div>
+            {/* Donut Chart */}
+            <div className="relative w-32 h-32 mx-auto">
+                <svg className="w-32 h-32 transform -rotate-90" viewBox="0 0 36 36">
+                  <path
+                    className="text-gray-200"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                    fill="transparent"
+                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                  />
+                  <path
+                    className="text-orange-500"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                    strokeDasharray="75, 100"
+                    strokeLinecap="round"
+                    fill="transparent"
+                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                  />
+                </svg>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-[20px] font-bold text-gray-900">5</div>
+                  </div>
+                </div>
+              </div>
+          </div>
           </div>
         </div>
 
         {/* Server Performance Table */}
         <div className="bg-white rounded-[14px] border border-gray-100 overflow-hidden">
           {/* Table Header */}
-          <div className="flex items-center justify-between py-4 px-6">
+          <div className="flex items-center justify-between py-4 px-6 gap-2">
             <h2 className="text-[24px] font-semibold text-black">Server Performance</h2>
             <Select>
               <SelectTrigger className="w-[180px]">
@@ -236,24 +226,24 @@ const MyEarningsPage = () => {
           {/* Table Content */}
           <div className="overflow-x-auto">
             <table className="w-full">
-              <thead className="bg-white border-t border-gray-100">
+              <thead className="bg-white">
                 <tr>
                   <th className="px-6 py-4 text-left text-[14px] text-gray-500 font-normal">Rank</th>
                   <th className="px-6 py-4 text-left text-[14px] text-gray-500 font-normal">MCP Server Name</th>
-                  <th className="px-6 py-4 text-left text-[14px] text-gray-500 font-normal">Status</th>
-                  <th className="px-6 py-4 text-left text-[14px] text-gray-500 font-normal">Total Calls</th>
-                  <th className="px-6 py-4 text-left text-[14px] text-gray-500 font-normal">Paid Calls</th>
-                  <th className="px-6 py-4 text-left text-[14px] text-gray-500 font-normal">Call Earnings</th>
-                  <th className="px-6 py-4 text-left text-[14px] text-gray-500 font-normal">Matching Fund</th>
-                  <th className="px-6 py-4 text-left text-[14px] text-gray-500 font-normal">Total Earnings</th>
-                  <th className="px-6 py-4 text-left text-[14px] text-gray-500 font-normal">Last Updated</th>
+                  <th className="px-2 py-4 text-center text-[14px] text-gray-500 font-normal">Status</th>
+                  <th className="px-2 py-4 text-center text-[14px] text-gray-500 font-normal">Total Calls</th>
+                  <th className="px-2 py-4 text-center text-[14px] text-gray-500 font-normal">Paid Calls</th>
+                  <th className="px-2 py-4 text-center text-[14px] text-gray-500 font-normal">Call Earnings</th>
+                  <th className="px-2 py-4 text-center text-[14px] text-gray-500 font-normal">Matching Fund</th>
+                  <th className="px-2 py-4 text-center text-[14px] text-gray-500 font-normal">Total Earnings</th>
+                  <th className="px-2 py-4 text-center text-[14px] text-gray-500 font-normal">Last Updated</th>
                 </tr>
               </thead>
               <tbody className="bg-white">
                 {serverData.map((server, index) => (
-                  <tr key={index} className="hover:bg-gray-50 border-t border-gray-100">
+                  <tr key={index} className="hover:bg-gray-50">
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-[16px] font-medium text-gray-700">{server.rank}</div>
+                      <div className="text-[16px] gap-2 text-center font-medium text-gray-700">{server.rank}.</div>
                     </td>
                     <td className="px-6 py-4">
                       <div className="flex flex-col">
@@ -262,10 +252,10 @@ const MyEarningsPage = () => {
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <span className={`inline-flex px-2 py-1 text-xs font-medium rounded-full ${
+                      <span className={`inline-flex px-3 py-0.5 text-xs font-medium rounded-full ${
                         server.status === 'Public' 
                           ? 'bg-green-100 text-green-800' 
-                          : 'bg-gray-100 text-gray-800'
+                          : 'bg-[#F0F9FF] text-[#026AA2]'
                       }`}>
                         {server.status}
                       </span>
@@ -283,10 +273,10 @@ const MyEarningsPage = () => {
                       <div className="text-[16px] font-medium text-gray-700">{server.matchingFund}</div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-[16px] font-bold text-green-600">{server.totalEarnings}</div>
+                      <div className="text-[16px] font-medium text-gray-700">{server.totalEarnings}</div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-[14px] text-gray-500">{server.lastUpdated}</div>
+                      <div className="text-[16px] text-gray-500">{server.lastUpdated}</div>
                     </td>
                   </tr>
                 ))}
