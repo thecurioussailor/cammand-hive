@@ -10,28 +10,21 @@ const MCPProxyServer = () => {
       id: 1,
       name: "Web Scraping Server",
       description: "Create an MCP server that can scrape websites and extract structured data.",
-      icon: "/logo.svg", // Using available icon
+      icon: "/mcpserver.svg", // Using available icon
       connected: false
     },
     {
       id: 2,
       name: "Web Scraping Server",
       description: "Create an MCP server that can scrape websites and extract structured data.",
-      icon: "/logo.svg",
-      connected: false
+      icon: "/mcpserver.svg",
+      connected: true
     },
     {
       id: 3,
       name: "Web Scraping Server", 
       description: "Create an MCP server that can scrape websites and extract structured data.",
-      icon: "/logo.svg",
-      connected: false
-    },
-    {
-      id: 4,
-      name: "Web Scraping Server",
-      description: "Create an MCP server that can scrape websites and extract structured data.",
-      icon: "/logo.svg",
+      icon: "/mcpserver.svg",
       connected: false
     }
   ];
@@ -46,72 +39,81 @@ const MCPProxyServer = () => {
   };
 
   return (
-    <div className="h-full flex flex-col">
+    <div className="h-full flex flex-col px-4 pb-6 gap-6">
       {/* Header */}
-      <div className="p-4 border-b border-gray-200">
-        <h2 className="text-lg font-semibold text-gray-900 mb-4">Recommended MCP Servers</h2>
-        
-        {/* Search Bar */}
-        <div className="relative">
-          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <svg className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-          </div>
-          <input
-            type="text"
-            placeholder="Search MCP Servers"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-orange-500 focus:border-orange-500 text-sm"
-          />
+      <div>
+        <div className="flex items-center py-6">
+          <h3 className="text-[24px] font-semibold text-black">Recommended MCP Servers</h3>
         </div>
-        
-        {/* Sort Button */}
-        <div className="flex justify-end mt-3">
-          <button className="inline-flex items-center px-3 py-1.5 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">
-            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12" />
-            </svg>
-            Sort Servers
-          </button>
+        {/* Search Bar */}
+        <div className="flex justify-between items-center gap-[13px]">
+          <div className="w-full border border-gray-300 rounded-[880px] flex items-center gap-[12px] pl-4 py-3">
+            <Image
+              src={"/search-sm.svg"}
+              alt="search"
+              width={20}
+              height={20}
+            />
+            <input
+              type="text"
+              placeholder="Search MCP Servers"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="block w-full focus-within:outline-none placeholder:text-gray-700"
+            />
+          </div>
+          {/* Sort Button */}
+          <div className="w-[186px]">
+            <button className="flex items-center gap-[12px] bg-[#FCFCFD] text-gray-800 px-4 py-3 rounded-full">
+              <Image
+                src={"/filter-lines.svg"}
+                alt="sort"
+                width={20}
+                height={20}
+              />
+              Sort Servers
+            </button>
+          </div>
         </div>
       </div>
 
       {/* Server List */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-4">
+      <div className="flex flex-col gap-[28px]">
         {filteredServers.map((server) => (
-          <div key={server.id} className="bg-white rounded-lg border border-gray-200 p-4 hover:shadow-sm transition-shadow">
-            <div className="flex items-start justify-between">
+          <div key={server.id} className="bg-white rounded-[12px] border border-gray-200 p-4 hover:shadow-sm transition-shadow">
+            <div className="flex items-center justify-between">
               <div className="flex items-start space-x-3 flex-1">
                 {/* Server Icon */}
-                <div className="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Image
                     src={server.icon}
                     alt={server.name}
-                    width={24}
-                    height={24}
-                    className="filter invert"
+                    width={40}
+                    height={40}
                   />
-                </div>
-                
                 {/* Server Info */}
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-base font-semibold text-gray-900 mb-1">
+                <div className="gap-3 flex flex-col">
+                  <h3 className="text-[22px] font-semibold text-gray-900 flex items-center gap-3">
                     {server.name}
+                    {server.connected && (
+                      <div className="text-[#FCFCFD] text-sm bg-[#12B76A] px-2 pr-3 py-[6px] rounded-full flex items-center gap-2">
+                        <div className="w-4 h-4 bg-white/45 rounded-full relative shrink-0">
+                          <div className="w-2 h-2 bg-white rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+                        </div>
+                        <span className="text-[12px] font-semibold">Connected</span>
+                      </div>
+                    )}
                   </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                  <p className="text-sm text-gray-700 leading-relaxed">
                     {server.description}
                   </p>
                 </div>
               </div>
-              
               {/* Connect Button */}
               <button
                 onClick={() => handleConnect(server.id)}
-                className="ml-4 px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white text-sm font-medium rounded-md transition-colors flex-shrink-0"
+                className={`ml-4 px-4 py-2 hover:bg-gray-700 text-sm font-medium rounded-md transition-colors flex-shrink-0 ${server.connected ? "bg-gray-100 text-gray-700" : "bg-gray-800 text-white"}`}
               >
-                Connect
+                {server.connected ? "Disconnect" : "Connect"}
               </button>
             </div>
           </div>

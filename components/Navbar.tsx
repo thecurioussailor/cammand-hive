@@ -26,7 +26,7 @@ const Navbar = () => {
                     <Link 
                         href={item.href} 
                         key={item.href} 
-                        className={`text-[16px] rounded-lg px-4 py-2 transition-all duration-300 ease-in-out font-semibold text-gray-500 ${pathname === item.href ? "bg-slate-100 text-gray-800" : ""}`}>
+                        className={`text-[16px] rounded-lg px-4 py-2 transition-all duration-300 ease-in-out font-semibold hover:bg-slate-100 text-gray-500 ${pathname === item.href ? "text-gray-800" : ""}`}>
                         {item.label}
                     </Link>
                 ))}

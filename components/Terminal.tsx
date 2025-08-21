@@ -31,7 +31,7 @@ const Terminal = () => {
     <div className="h-full p-4">
       <div className="bg-white rounded-lg h-full flex flex-col overflow-hidden">
         {/* Terminal Header */}
-        <div className="flex items-center justify-between p-[15px] bg-gray-200 rounded-t-lg">
+        <div className="flex items-center justify-between p-[15px] bg-gray-200 rounded-t-lg border border-gray-200">
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-1.5">
               <div className="w-3 h-3 rounded-full bg-red-500"></div>

@@ -134,7 +134,6 @@ const HomePage = () => {
                       <div className="w-2 h-2 rounded-full animate-pulse"></div>
                       <SelectValue placeholder="Choose a model" />
                     </div>
-                    <ChevronDown className="w-3 h-3 transition-transform duration-200" />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="claude-sonnet-4">
