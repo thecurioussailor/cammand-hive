@@ -30,7 +30,7 @@ const ToolsCall = () => {
   };
 
   return (
-    <div className="h-full p-4">
+    <div className="h-full">
       <h2 className="text-lg font-semibold text-gray-900 mb-6">Available Tool Calls</h2>
       
       <div className="space-y-6">

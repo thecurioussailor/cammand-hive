@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 const GeneratedCode = () => {
   const codeContent = `// Type some code ->
 
@@ -40,38 +42,35 @@ return false;`;
   };
 
   return (
-    <div className="h-full flex flex-col">
-      <div className="flex items-center justify-between p-4 border-b border-gray-200">
-        <h3 className="text-lg font-semibold text-gray-900">MCP Server Code</h3>
-        <div className="flex items-center gap-2">
-          <button
-            onClick={handleFullscreen}
-            className="p-1.5 hover:bg-gray-100 rounded-md"
-            title="Fullscreen"
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
-            </svg>
-          </button>
-          <button
-            onClick={handleCopy}
-            className="p-1.5 hover:bg-gray-100 rounded-md"
-            title="Copy code"
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-            </svg>
-          </button>
-        </div>
+    <div className="h-full flex flex-col px-4 pb-6">
+      <div className="flex items-center py-6">
+        <h3 className="text-[24px] font-semibold text-black">MCP Server Code</h3>
       </div>
       
-      <div className="flex-1 overflow-auto bg-gray-50">
-        <pre className="p-4 text-sm font-mono leading-relaxed">
+      <div className="flex-1 overflow-auto border rounded-lg bg-[#FCFCFD]">
+        <pre className="relative text-sm font-mono leading-relaxed p-6">
+          <div className="absolute flex gap-[10px] top-6 right-6">
+            <div className="cursor-pointer p-[10px] bg-gray-50 rounded-[8px] border border-gray-200">
+              <Image
+                  src={"/expand-01.svg"}
+                  alt="copy"
+                  width={20}
+                  height={20}
+              />
+            </div>
+            <div className="cursor-pointer p-[10px] bg-gray-50 rounded-[8px] border border-gray-200">
+              <Image
+                  src={"/copy-06.svg"}
+                  alt="copy"
+                  width={20}
+                  height={20}
+              />
+            </div>
+          </div>
           <code className="text-gray-800">
             {codeContent.split('\n').map((line, index) => (
               <div key={index} className="flex">
-                <span className="text-gray-400 select-none w-8 text-right mr-4 shrink-0">
+                <span className="text-gray-400 select-none w-8 mr-4 shrink-0">
                   {index + 1}
                 </span>
                 <span className="flex-1">

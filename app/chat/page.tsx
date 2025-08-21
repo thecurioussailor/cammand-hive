@@ -123,10 +123,9 @@ const ChatPage = () => {
             </div>
           </div>
         </div>
-
         {/* Tab Content */}
-        <div className="flex-1 p-4">
-          <div className="h-full bg-white rounded-lg border border-gray-200 p-4">
+        <div>
+          <div className="h-full">
             {activeTab === "Generated Code" && (
               <div className="text-gray-500">
                 <GeneratedCode />
