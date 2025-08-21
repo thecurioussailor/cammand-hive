@@ -10,6 +10,8 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { Info, X } from 'lucide-react';
+import Image from "next/image";
+
 interface EnvVariable {
   id: number;
   name: string;
@@ -44,13 +46,13 @@ const EnvironmentVariables = () => {
   };
 
   return (
-    <div className="h-full p-4">
-      <div className="flex items-center justify-between mb-6">
+    <div className="h-full flex flex-col px-4 pb-6">
+      <div className="flex justify-between py-6">
         <div className="flex items-center gap-2">
-          <h2 className="text-lg font-semibold text-gray-900">Environmental Variables</h2>
+          <h2 className="text-[24px] font-semibold text-black">Environmental Variables</h2>
           <Dialog>
             <DialogTrigger>
-                <Info className="w-4 h-4 mt-1" />
+                <Info className="w-[22px] h-[22px] mt-1" />
             </DialogTrigger>
             <DialogContent className="[&>button]:hidden">
               <DialogHeader className="gap-4">
@@ -75,13 +77,15 @@ const EnvironmentVariables = () => {
         <div className="flex items-center gap-2">
           <button
             onClick={addVariable}
-            className="p-2 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-md"
+            className="p-2 text-gray-600 hover:text-gray-800 bg-gray-50 rounded-md"
             title="Add variable"
           >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <line x1="12" y1="5" x2="12" y2="19"/>
-              <line x1="5" y1="12" x2="19" y2="12"/>
-            </svg>
+            <Image
+              src={"/plus.svg"}
+              alt="add"
+              width={24}
+              height={24}
+            />
           </button>
           <button
             onClick={saveAll}
@@ -91,12 +95,11 @@ const EnvironmentVariables = () => {
           </button>
         </div>
       </div>
-
       <div className="space-y-4">
         {variables.map((variable) => (
-          <div key={variable.id} className="grid grid-cols-2 gap-4 items-start">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+          <div key={variable.id} className="grid grid-cols-2 gap-4 items-start bg-[#FCFCFD] rounded-[12px] border border-gray-200 p-5">
+            <div className="flex flex-col gap-2">
+              <label className="block text-sm font-medium text-gray-800">
                 Variable Name:
               </label>
               <input
@@ -104,13 +107,13 @@ const EnvironmentVariables = () => {
                 value={variable.name}
                 onChange={(e) => updateVariable(variable.id, 'name', e.target.value)}
                 placeholder="e.g, API_KEY"
-                className="w-full h-10 px-3 border border-gray-300 rounded-md focus:border-orange-500 focus:ring-orange-500 text-sm placeholder-gray-400"
+                className="w-full h-10 px-3 bg-gray-100 rounded-md focus:border-orange-500 focus:ring-orange-500 text-sm placeholder-gray-400"
               />
             </div>
             
-            <div className="flex gap-2">
-              <div className="flex-1">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+            <div className="flex gap-2 w-full">
+              <div className="flex flex-col gap-2 w-full">
+                <label className="block text-sm font-medium text-gray-800">
                   Variable Value:
                 </label>
                 <input
@@ -118,18 +121,20 @@ const EnvironmentVariables = () => {
                   value={variable.value}
                   onChange={(e) => updateVariable(variable.id, 'value', e.target.value)}
                   placeholder="e.g, example"
-                  className="w-full h-10 px-3 border border-gray-300 rounded-md focus:border-orange-500 focus:ring-orange-500 text-sm placeholder-gray-400"
+                  className="w-full h-10 px-3 bg-gray-100 rounded-md focus:border-orange-500 focus:ring-orange-500 text-sm placeholder-gray-400"
                 />
               </div>
               <button
                 onClick={() => deleteVariable(variable.id)}
-                className="mt-7 p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-md"
+                className="mt-7 p-2 text-gray-400 bg-gray-50 border border-gray-200 rounded-md"
                 title="Delete variable"
               >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <polyline points="3,6 5,6 21,6"/>
-                  <path d="M19,6v14a2,2 0,0,1-2,2H7a2,2,0,0,1-2-2V6m3,0V4a2,2,0,0,1,2-2h4a2,2,0,0,1,2,2v2"/>
-                </svg>
+                <Image
+                  src={"/delete.svg"}
+                  alt="delete"
+                  width={24}
+                  height={24}
+                />
               </button>
             </div>
           </div>
