@@ -30,36 +30,37 @@ const ToolsCall = () => {
   };
 
   return (
-    <div className="h-full">
-      <h2 className="text-lg font-semibold text-gray-900 mb-6">Available Tool Calls</h2>
-      
-      <div className="space-y-6">
+    <div className="h-full flex flex-col px-4 pb-6">
+      <div className="flex items-center py-6">
+        <h3 className="text-[24px] font-semibold text-black">Available Tool Calls</h3>
+      </div>
+      <div className="flex flex-col gap-4">
         {toolCalls.map((tool) => (
-          <div key={tool.id} className="bg-white rounded-lg border border-gray-200 p-4">
-            <div className="mb-3">
-              <h3 className="text-base font-semibold text-gray-900 mb-1">
+          <div key={tool.id} className="bg-[#FCFCFD] rounded-[12px] border border-gray-200 p-5 flex flex-col gap-4">
+            <div className="flex flex-col gap-1">
+              <h3 className="text-[18px] font-semibold text-black">
                 {tool.title}
               </h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-[16px] text-gray-600">
                 {tool.description}
               </p>
             </div>
             
-            <div className="grid grid-cols-2 gap-4 mb-4">
-              <div>
-                <label className="block text-xs font-medium text-gray-700 mb-2">
+            <div className="grid grid-cols-2 gap-4">
+              <div className="flex flex-col gap-2">
+                <label className="block text-xs font-medium text-gray-800">
                   Base Token:
                 </label>
-                <div className="bg-gray-50 border border-gray-200 rounded-md px-3 py-2">
+                <div className="bg-gray-100 rounded-[8px] px-3 py-2">
                   <span className="text-sm text-gray-900">{tool.baseToken}</span>
                 </div>
               </div>
               
-              <div>
-                <label className="block text-xs font-medium text-gray-700 mb-2">
+              <div className="flex flex-col gap-2">
+                <label className="block text-xs font-medium text-gray-800">
                   quoteToken:
                 </label>
-                <div className="bg-gray-50 border border-gray-200 rounded-md px-3 py-2">
+                <div className="bg-gray-100 rounded-[8px] px-3 py-2">
                   <span className="text-sm text-gray-900">{tool.quoteToken}</span>
                 </div>
               </div>
@@ -67,7 +68,7 @@ const ToolsCall = () => {
             
             <button
               onClick={() => handleExecute(tool.id)}
-              className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white text-sm font-medium rounded-md transition-colors"
+              className="px-4 py-2 w-[103px] bg-slate-800 hover:bg-slate-700 text-white text-sm font-medium rounded-md transition-colors"
             >
               Execute
             </button>
