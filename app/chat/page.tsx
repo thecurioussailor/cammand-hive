@@ -124,7 +124,7 @@ const ChatPage = () => {
           </div>
         </div>
         {/* Tab Content */}
-        <div>
+        <div className="h-full">
           <div className="h-full">
             {activeTab === "Generated Code" && (
               <div className="text-gray-500">
@@ -142,7 +142,7 @@ const ChatPage = () => {
               </div>
             )}
             {activeTab === "Terminal" && (
-              <div className="text-gray-500">
+              <div className="text-gray-500 h-full">
                 <Terminal />
               </div>
             )}
