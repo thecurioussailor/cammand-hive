@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const showcaseItems = [
   {
@@ -130,6 +131,7 @@ const ShowcasePage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[25px]">
             {showcaseItems.map((item) => (
                 <div key={item.id} className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
+                    <Link href={`/showcase/${item.id}`}>
                     <div className="relative h-48 bg-gradient-to-br from-blue-500 to-purple-600 rounded-b-lg">
                         <Image
                             src={item.image}
@@ -154,6 +156,7 @@ const ShowcasePage = () => {
                         </div>
                         <p className="text-sm text-gray-700 leading-relaxed">{item.description}</p>
                     </div>
+                    </Link>
                 </div>
             ))}
             </div>
